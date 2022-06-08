@@ -156,8 +156,8 @@ public class MyStepdefs {
     }
 
     @Then("Navigate to url {string}")
-    public void navigateToUrl(String mainPage) {
-        Driver.getDriver().get(ConfigReader.getProperty("mainPage"));
+    public void navigateToUrl(String string) {
+        Driver.getDriver().get(ConfigReader.getProperty(string));
     }
 
 

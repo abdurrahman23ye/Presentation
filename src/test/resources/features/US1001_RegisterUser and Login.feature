@@ -5,7 +5,7 @@ Feature: Register user and Login
 
     Background:
     Given Launch browser
-    Then Navigate to url "mainpage"
+    Then Navigate to url "mainPage"
     And Verify that home page is visible successfully
     And Click on Signup / Login button
 
