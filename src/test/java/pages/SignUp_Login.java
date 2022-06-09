@@ -36,6 +36,9 @@ public class SignUp_Login {
     @FindBy(xpath = "(//button)[1]")
     public WebElement login;
 
+    @FindBy(xpath = "//p[text()='Email Address already exist!']")
+    public WebElement emailAlreadyExist;
+
 
     @FindBy(xpath = "//p[text()='Your email or password is incorrect!']")
     public WebElement loginerror;

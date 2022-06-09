@@ -228,4 +228,16 @@ public class MyStepdefs {
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().equals(loginURL));
 
     }
+
+    @And("Enter name and already registered email address")
+    public void enterNameAndAlreadyRegisteredEmailAddress() {
+
+        signUp_login.newUserSignUpName.sendKeys(ConfigReader.getProperty("dogruisim"));
+        signUp_login.newUserSignUpEmail.sendKeys(ConfigReader.getProperty("dogruEmail"));
+    }
+
+    @And("Verify error Email Address already exist! is visible")
+    public void verifyErrorEmailAddressAlreadyExistIsVisible() {
+        Assert.assertTrue(signUp_login.emailAlreadyExist.isDisplayed());
+    }
 }
