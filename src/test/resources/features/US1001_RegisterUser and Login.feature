@@ -7,7 +7,7 @@ Feature: Register user and Login
     Given Launch browser
     Then Navigate to url "mainPage"
     And Verify that home page is visible successfully
-    And Click on Signup / Login button
+    And Click on Signup  Login button
 
   @task
   Scenario: Register User

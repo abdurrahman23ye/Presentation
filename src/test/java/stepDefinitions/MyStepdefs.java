@@ -26,6 +26,7 @@ public class MyStepdefs {
     JavascriptExecutor js= (JavascriptExecutor) Driver.getDriver();
     Actions action=new Actions(Driver.getDriver());
     Faker fk=new Faker();
+    String loginURL;
 
     @Given("Launch browser")
     public void launchBrowser() {}
@@ -42,11 +43,7 @@ public class MyStepdefs {
 
 
 
-    @And("Click on Signup \\/ Login button")
-    public void clickOnSignupLoginButton() {
-        mainPage.loginLinki.click();
 
-    }
 
 
     @And("Verify New User Signup! is visible")
@@ -164,6 +161,7 @@ public class MyStepdefs {
     @And("Verify Login to your account is visible")
     public void verifyLoginToYourAccountIsVisible() {
         Assert.assertTrue(signUp_login.loginLabel.isDisplayed());
+        loginURL=Driver.getDriver().getCurrentUrl();
     }
 
     @And("Enter correct email address and password")
@@ -178,6 +176,7 @@ public class MyStepdefs {
     public void clickLoginButton() {
 
         signUp_login.login.click();
+
     }
 
     @And("Enter incorrect email address and password")
@@ -210,5 +209,23 @@ public class MyStepdefs {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    @And("Click on Signup  Login button")
+    public void clickOnSignupLoginButton() {
+        mainPage.loginLinki.click();
+    }
+
+    @And("Click Logout button")
+    public void clickLogoutButton() {
+        mainPage.logOut.click();
+    }
+
+    @And("Verify that user is navigated to login page")
+    public void verifyThatUserIsNavigatedToLoginPage() {
+
+
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().equals(loginURL));
+
     }
 }
