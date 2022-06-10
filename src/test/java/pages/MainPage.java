@@ -32,5 +32,8 @@ public class MainPage {
     @FindBy(xpath = "//a[@href='/delete_account']")
     public WebElement deleteAccount;
 
+    @FindBy(xpath = "//a[@href='/products']")
+    public WebElement products;
+
 
 }

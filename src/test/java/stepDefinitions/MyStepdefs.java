@@ -27,6 +27,7 @@ public class MyStepdefs {
     String loginURL;
     ContactPage contactPage=new ContactPage();
     TestCasesPage testCasesPage=new TestCasesPage();
+    ProductPage productPage=new ProductPage();
 
     @Given("Launch browser")
     public void launchBrowser() {}
@@ -303,5 +304,42 @@ public class MyStepdefs {
     public void verifyUserIsNavigatedToTestCasesPageSuccessfully() {
         Driver.getDriver().getCurrentUrl().equals(ConfigReader.getProperty("testCasePage"));
 
+    }
+
+    @And("Click on Products button")
+    public void clickOnProductsButton() {
+        mainPage.products.click();
+    }
+
+    @And("Verify user is navigated to ALL PRODUCTS page successfully")
+    public void verifyUserIsNavigatedToALLPRODUCTSPageSuccessfully() {
+
+        Assert.assertEquals(Driver.getDriver().getCurrentUrl(),ConfigReader.getProperty("productsPage"));
+    }
+
+    @And("The products list is visible")
+    public void theProductsListIsVisible() {
+        js.executeScript("window.scrollBy(0,600)");
+        Assert.assertTrue(productPage.allProductsLabel.isDisplayed());
+    }
+
+    @And("Click on View Product of first product")
+    public void clickOnViewProductOfFirstProduct() {
+        productPage.listedFirstProducts.click();
+    }
+
+    @And("User is landed to product detail page")
+    public void userIsLandedToProductDetailPage() {
+
+    }
+
+    @And("Verify that detail detail is visible: product name, category, price, availability, condition, brand")
+    public void verifyThatDetailDetailIsVisibleProductNameCategoryPriceAvailabilityConditionBrand() {
+        Assert.assertTrue(productPage.listedFirstProductsCondition.isDisplayed());
+        Assert.assertTrue(productPage.listedFirstProductsBrand.isDisplayed());
+        Assert.assertTrue(productPage.listedFirstProductsName.isDisplayed());
+        Assert.assertTrue(productPage.listedFirstProductsCategory.isDisplayed());
+        Assert.assertTrue(productPage.listedFirstProductsPrice.isDisplayed());
+        Assert.assertTrue(productPage.listedFirstProductsAvailability.isDisplayed());
     }
 }
