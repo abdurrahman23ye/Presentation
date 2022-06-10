@@ -35,5 +35,20 @@ public class MainPage {
     @FindBy(xpath = "//a[@href='/products']")
     public WebElement products;
 
+    @FindBy(xpath ="//h2[text()='Subscription']")
+    public WebElement subscription;
+
+    @FindBy(xpath ="//input[@id='susbscribe_email']")
+    public WebElement subscribe_email;
+
+    @FindBy(xpath ="//i[@class='fa fa-arrow-circle-o-right']")
+    public WebElement arrow;
+
+    @FindBy(xpath ="//div[@class='alert-success alert']")
+    public WebElement subscribeSuccess;
+
+    @FindBy(xpath ="(//a[@href='/view_cart'])[1]")
+    public WebElement cartButton;
+
 
 }

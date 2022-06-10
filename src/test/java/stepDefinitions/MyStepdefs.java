@@ -32,6 +32,7 @@ public class MyStepdefs {
     TestCasesPage testCasesPage=new TestCasesPage();
     ProductPage productPage=new ProductPage();
     TakesScreenshot ts= (TakesScreenshot) Driver.getDriver();
+    WebDriverWait wait= new WebDriverWait(Driver.getDriver(),Duration.ofSeconds(15));
 
     @Given("Launch browser")
     public void launchBrowser() {}
@@ -373,4 +374,43 @@ public class MyStepdefs {
 
         Assert.assertTrue(productPage.searchedProducts.isDisplayed());
             }
+
+    @And("Scroll down to footer")
+    public void scrollDownToFooter() {
+
+        Actions action=new Actions(Driver.getDriver());
+
+        int input=3;
+        int sayac=0;
+        while(sayac<input){
+            action.sendKeys(Keys.PAGE_DOWN).perform();
+
+            sayac++;}
+    }
+
+    @And("Verify text SUBSCRIPTION")
+    public void verifyTextSUBSCRIPTION() {
+        Assert.assertTrue(mainPage.subscription.isDisplayed());
+    }
+
+    @And("Enter email address in input and click arrow button")
+    public void enterEmailAddressInInputAndClickArrowButton() {
+        mainPage.subscribe_email.sendKeys(ConfigReader.getProperty("dogruEmail"));
+
+        mainPage.arrow.click();
+    }
+
+    @And("Verify success message You have been successfully subscribed! is visible")
+    public void verifySuccessMessageYouHaveBeenSuccessfullySubscribedIsVisible() {
+
+
+        wait.until(ExpectedConditions.visibilityOf(mainPage.subscribeSuccess));
+
+        Assert.assertTrue(mainPage.subscribeSuccess.isDisplayed());
+    }
+
+    @Given("Click Cart button")
+    public void clickCartButton() {
+        mainPage.cartButton.click();
+    }
 }

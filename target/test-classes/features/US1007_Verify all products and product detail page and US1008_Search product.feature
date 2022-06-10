@@ -7,7 +7,7 @@ Feature: US1006_Verify all products and product detail page and search product
     And Verify that home page is visible successfully
     And Click on Products button
     And Verify user is navigated to ALL PRODUCTS page successfully
-  @try
+  @task
   Scenario:Verify all products and product detail page
 
 
@@ -17,11 +17,12 @@ Feature: US1006_Verify all products and product detail page and search product
     And Verify that detail detail is visible: product name, category, price, availability, condition, brand
     And Close the page
 
-   @try
+   @task
    Scenario: Search product
     And Enter product name in search input and click search button
     And Verify SEARCHED PRODUCTS is visible
     And Verify all the products related to search are visible
+    And Close the page
 
 
 
