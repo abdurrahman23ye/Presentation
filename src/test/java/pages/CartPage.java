@@ -11,8 +11,9 @@ public class CartPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(xpath = "//a[@href='/product_details/1']")
+    @FindBy(xpath = "//a[@href='/product_details/1']")//copied to main page
     public WebElement firstProduct;
+
 
     @FindBy(xpath = "//a[@href='/product_details/2']")
     public WebElement secondProduct;

@@ -1,30 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="48.776">
-    <testcase classname="US1006_Verify all products and product detail page" name="Verify all products and product detail page" time="25.872">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="20.904">
+    <testcase classname="US1010_Add products in cart" name="_2" time="20.565">
         <system-out>
             <![CDATA[Given Launch browser........................................................passed
 And Navigate to url 'mainPage'..............................................passed
 And Verify that home page is visible successfully...........................passed
-And Click on Products button................................................passed
-And Verify user is navigated to ALL PRODUCTS page successfully..............passed
-And The products list is visible............................................passed
-And Click on View Product of first product..................................passed
-And User is landed to product detail page...................................passed
-And Verify that detail detail is visible: product name, category, price, availability, condition, brand.passed
-And Close the page..........................................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="US1006_Verify all products and product detail page" name="Search product" time="22.444">
-        <system-out>
-            <![CDATA[Given Launch browser........................................................passed
-And Navigate to url 'mainPage'..............................................passed
-And Verify that home page is visible successfully...........................passed
-And Click on Products button................................................passed
-And Verify user is navigated to ALL PRODUCTS page successfully..............passed
-And Enter product name in search input and click search button..............passed
-And Verify SEARCHED PRODUCTS is visible.....................................passed
-And Verify all the products related to search are visible...................passed
+Given Click View Product for any product on home page.......................passed
+And Verify product detail is opened.........................................passed
+And Increase quantity to 4..................................................passed
+And Click Add to cart button................................................passed
+And Click View Cart button..................................................passed
+And Verify that product is displayed in cart page with exact quantity.......passed
 ]]>
         </system-out>
     </testcase>

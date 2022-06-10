@@ -14,6 +14,7 @@ import pages.*;
 import utilities.ConfigReader;
 import utilities.Driver;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -28,6 +29,7 @@ public class MyStepdefs {
     ContactPage contactPage=new ContactPage();
     TestCasesPage testCasesPage=new TestCasesPage();
     ProductPage productPage=new ProductPage();
+    ProductDetailPage productDetailPage=new ProductDetailPage();
     
     JavascriptExecutor js= (JavascriptExecutor) Driver.getDriver();
     Actions action=new Actions(Driver.getDriver());
@@ -35,6 +37,8 @@ public class MyStepdefs {
     String loginURL;
     TakesScreenshot ts= (TakesScreenshot) Driver.getDriver();
     WebDriverWait wait= new WebDriverWait(Driver.getDriver(),Duration.ofSeconds(15));
+
+    static int US1010;
 
     @Given("Launch browser")
     public void launchBrowser() {}
@@ -468,6 +472,45 @@ public class MyStepdefs {
         Assert.assertTrue(inputAddedSecondCart*inputAddedSecondQuan==inputAddedSecondTotal);
 
 
+    }
+
+    @Given("Click View Product for any product on home page")
+    public void clickViewProductForAnyProductOnHomePage() {
+
+        js.executeScript("window.scrollBy(0,250)");
+
+        mainPage.firstProduct.click();
+
+
+    }
+
+    @And("Verify product detail is opened")
+    public void verifyProductDetailIsOpened() {
+
+        Assert.assertEquals(Driver.getDriver().getCurrentUrl(),ConfigReader.getProperty("firstProductDetailPage"));
+    }
+
+    @And("Increase quantity to {int}")
+    public void ıncreaseQuantityTo(int arg0) throws InterruptedException {
+
+
+
+        action.moveToElement(productDetailPage.productQuantity).click().perform();
+        action.moveToElement(productDetailPage.productQuantity).sendKeys(Keys.BACK_SPACE).perform();
+        action.moveToElement(productDetailPage.productQuantity).sendKeys("4").perform();
+
+
+    }
+
+    @And("Click Add to cart button")
+    public void clickAddToCartButton() {
+
+        productDetailPage.addToCart.click();
+    }
+
+    @And("Verify that product is displayed in cart page with exact quantity")
+    public void verifyThatProductIsDisplayedInCartPageWithExactQuantity() {
+        Assert.assertEquals("4",productDetailPage.addedProductQuantity.getText());
     }
 }
 

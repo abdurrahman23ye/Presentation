@@ -50,5 +50,8 @@ public class MainPage {
     @FindBy(xpath ="(//a[@href='/view_cart'])[1]")
     public WebElement cartButton;
 
+    @FindBy(xpath = "//a[@href='/product_details/1']")
+    public WebElement firstProduct;
+
 
 }
