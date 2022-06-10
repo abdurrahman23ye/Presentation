@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue="stepDefinitions",
-        tags="@task", //"@Test213 or @Test214"
+        tags="@try", //"@Test213 or @Test214"
         dryRun = false //dryRun=true adımlarda eksik varsa onu bildirir, calistirmaz.
 )
 

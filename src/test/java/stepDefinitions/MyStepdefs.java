@@ -4,10 +4,9 @@ import com.github.javafaker.Faker;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,6 +14,10 @@ import pages.*;
 import utilities.ConfigReader;
 import utilities.Driver;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.time.Duration;
 
 public class MyStepdefs {
@@ -28,6 +31,7 @@ public class MyStepdefs {
     ContactPage contactPage=new ContactPage();
     TestCasesPage testCasesPage=new TestCasesPage();
     ProductPage productPage=new ProductPage();
+    TakesScreenshot ts= (TakesScreenshot) Driver.getDriver();
 
     @Given("Launch browser")
     public void launchBrowser() {}
@@ -342,4 +346,31 @@ public class MyStepdefs {
         Assert.assertTrue(productPage.listedFirstProductsPrice.isDisplayed());
         Assert.assertTrue(productPage.listedFirstProductsAvailability.isDisplayed());
     }
+
+    @And("Enter product name in search input and click search button")
+    public void enterProductNameInSearchInputAndClickSearchButton() {
+
+        js.executeScript("window.scrollBy(0,600)");
+
+        productPage.searchBox.sendKeys("winter top");
+        productPage.searchButton.click();
+    }
+
+    @And("Verify SEARCHED PRODUCTS is visible")
+    public void verifySEARCHEDPRODUCTSIsVisible() {
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        js.executeScript("window.scrollBy(0,500)");
+        Assert.assertTrue(productPage.searchedProducts.isDisplayed());
+    }
+
+    @And("Verify all the products related to search are visible")
+    public void verifyAllTheProductsRelatedToSearchAreVisible() {
+
+        Assert.assertTrue(productPage.searchedProducts.isDisplayed());
+            }
 }

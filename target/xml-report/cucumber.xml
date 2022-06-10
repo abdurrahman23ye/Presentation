@@ -1,79 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="4" time="90.854">
-    <testcase classname="Register user and Login" name="Register User" time="37.07">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="2" time="48.776">
+    <testcase classname="US1006_Verify all products and product detail page" name="Verify all products and product detail page" time="25.872">
         <system-out>
-            <![CDATA[Given Launch browser........................................................passed
-Then Navigate to url "mainPage".............................................passed
-And Verify that home page is visible successfully...........................passed
-And Click on Signup  Login button...........................................passed
-And Verify New User Signup! is visible......................................passed
-And Enter name and email address............................................passed
-And Click Signup button.....................................................passed
-And Verify that ENTER ACCOUNT INFORMATION is visible........................passed
-And Fill details: Title, Name, Email, Password, Date of birth...............passed
-And Select checkbox Sign up for our newsletter!.............................passed
-And Select checkbox Receive special offers from our partners!Fill details: First name, Last name, Company, Address,.passed
-And Click Create Account button.............................................passed
-And Verify that ACCOUNT CREATED! is visible.................................passed
-And Click Continue button...................................................passed
-And Verify that Logged in as username is visible............................passed
-And Click Delete Account button.............................................passed
-And Close the page..........................................................passed
-Then wait 5 seconds.........................................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="Register user and Login" name="Login User with correct email and password" time="19.819">
-        <system-out>
-            <![CDATA[Given Launch browser........................................................passed
-Then Navigate to url "mainPage".............................................passed
-And Verify that home page is visible successfully...........................passed
-And Click on Signup  Login button...........................................passed
-And Verify Login to your account is visible.................................passed
-And Enter correct email address and password................................passed
-And Click login button......................................................passed
-And Verify that Logged in as username is visible............................passed
-And Click Delete Account button.............................................passed
-And Close the page..........................................................passed
-Then wait 5 seconds.........................................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="Register user and Login" name="Login user with incorrect email and password" time="14.531">
-        <system-out>
-            <![CDATA[Given Launch browser........................................................passed
-Then Navigate to url "mainPage".............................................passed
-And Verify that home page is visible successfully...........................passed
-And Click on Signup  Login button...........................................passed
-And Verify Login to your account is visible.................................passed
-And Enter incorrect email address and password..............................passed
-And Click login button......................................................passed
-And Verify error Your email or password is incorrect! is visible............passed
-And Close the page..........................................................passed
-]]>
-        </system-out>
-    </testcase>
-    <testcase classname="Unknown" name="Logout User" time="17.313">
-        <failure message="" type="java.lang.AssertionError">
             <![CDATA[Given Launch browser........................................................passed
 And Navigate to url 'mainPage'..............................................passed
 And Verify that home page is visible successfully...........................passed
-And Click on Signup  Login button...........................................passed
-And Verify Login to your account is visible.................................passed
-And Enter correct email address and password................................passed
-And Click login button......................................................passed
-And Verify that Logged in as username is visible............................passed
-And Click Logout button.....................................................passed
-And Verify that user is navigated to login page.............................failed
-
-StackTrace:
-java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:87)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at org.junit.Assert.assertTrue(Assert.java:53)
-	at stepDefinitions.MyStepdefs.verifyThatUserIsNavigatedToLoginPage(MyStepdefs.java:227)
-	at ✽.Verify that user is navigated to login page(file:///C:/Users/asus/IdeaProjects/com.Automationexercise_Cucumber/src/test/resources/features/US1002_Logout.feature:15)
+And Click on Products button................................................passed
+And Verify user is navigated to ALL PRODUCTS page successfully..............passed
+And The products list is visible............................................passed
+And Click on View Product of first product..................................passed
+And User is landed to product detail page...................................passed
+And Verify that detail detail is visible: product name, category, price, availability, condition, brand.passed
+And Close the page..........................................................passed
 ]]>
-        </failure>
+        </system-out>
+    </testcase>
+    <testcase classname="US1006_Verify all products and product detail page" name="Search product" time="22.444">
+        <system-out>
+            <![CDATA[Given Launch browser........................................................passed
+And Navigate to url 'mainPage'..............................................passed
+And Verify that home page is visible successfully...........................passed
+And Click on Products button................................................passed
+And Verify user is navigated to ALL PRODUCTS page successfully..............passed
+And Enter product name in search input and click search button..............passed
+And Verify SEARCHED PRODUCTS is visible.....................................passed
+And Verify all the products related to search are visible...................passed
+]]>
+        </system-out>
     </testcase>
 </testsuite>
