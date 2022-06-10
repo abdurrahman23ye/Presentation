@@ -512,5 +512,85 @@ public class MyStepdefs {
     public void verifyThatProductIsDisplayedInCartPageWithExactQuantity() {
         Assert.assertEquals("4",productDetailPage.addedProductQuantity.getText());
     }
+
+    @And("Add products to cart")
+    public void addProductsToCart() {
+        
+        mainPage.addProductToCart1.click();
+
+    }
+
+    @And("Verify that cart page is displayed")
+    public void verifyThatCartPageIsDisplayed() {
+
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().equals(ConfigReader.getProperty("cartPage")));
+
+    }
+
+    @And("Add product to cart")
+    public void addProductToCart() {
+        mainPage.addProductToCart2.click();
+    }
+
+    @And("Click Proceed To Checkout")
+    public void clickProceedToCheckout() {
+
+        cartPage.proceedToCheckout.click();
+
+
+    }
+
+    @And("Click Register  Login button")
+    public void clickRegisterLoginButton() {
+
+        cartPage.registerLoginButton.click();
+    }
+
+    @And("Verify Address Details and Review Your Order")
+    public void verifyAddressDetailsAndReviewYourOrder() {
+
+        Assert.assertTrue(cartPage.deliverAdress.isDisplayed());
+        Assert.assertTrue(cartPage.billingAdress.isDisplayed());
+    }
+
+
+    @And("Enter description in comment text area and click Place Order")
+    public void enterDescriptionInCommentTextAreaAndClickPlaceOrder() {
+        js.executeScript("window.scrollBy(0,250)");
+
+        cartPage.textArea.sendKeys("my number:343534343");
+
+        cartPage.placeOrder.click();
+    }
+
+    @And("Enter payment details: Name on Card, Card Number, CVC, Expiration date")
+    public void enterPaymentDetailsNameOnCardCardNumberCVCExpirationDate() throws InterruptedException {
+        js.executeScript("window.scrollBy(0,250)");
+
+        Thread.sleep(5000);
+
+        action.moveToElement(cartPage.cardName).click().perform();
+        action.sendKeys("MasterCard").perform();
+        action.sendKeys(Keys.TAB).perform();
+        action.sendKeys("23232322").perform();
+        action.sendKeys(Keys.TAB).perform();
+        action.sendKeys("232").perform();
+        action.sendKeys(Keys.TAB).perform();
+        action.sendKeys("11").perform();
+        action.sendKeys(Keys.TAB).perform();
+        action.sendKeys("2025").perform();
+    }
+
+    @And("Click Pay and Confirm Order button")
+    public void clickPayAndConfirmOrderButton() {
+
+        cartPage.payAndOrder.click();
+    }
+
+    @And("Verify success message Your order has been placed successfully!")
+    public void verifySuccessMessageYourOrderHasBeenPlacedSuccessfully() {
+
+        Assert.assertTrue(cartPage.success.isDisplayed());
+    }
 }
 

@@ -7,6 +7,7 @@ Feature: US1010_Add products in cart
     And Navigate to url 'mainPage'
     And Verify that home page is visible successfully
 
+  @task
   Scenario: Add products in cart
 
 
@@ -19,7 +20,7 @@ Feature: US1010_Add products in cart
     And Verify their prices, quantity and total price
     And Close the page
 
-    @try
+    @task
     Scenario:
 
 

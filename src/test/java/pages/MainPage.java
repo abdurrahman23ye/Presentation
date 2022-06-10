@@ -53,5 +53,12 @@ public class MainPage {
     @FindBy(xpath = "//a[@href='/product_details/1']")
     public WebElement firstProduct;
 
+    @FindBy(xpath = "(//a[@data-product-id='1' and @class='btn btn-default add-to-cart'])[1]")
+    public  WebElement addProductToCart1;
+
+
+    @FindBy(xpath = "(//a[@data-product-id='2' and @class='btn btn-default add-to-cart'])[1]")
+    public  WebElement addProductToCart2;
+
 
 }

@@ -39,5 +39,33 @@ public class CartPage {
     @FindBy(xpath = "(//button[@class='disabled'])[2]")
     public WebElement secondAddedProductQuantity;
 
+    @FindBy(xpath = "//a[@class='btn btn-default check_out']")
+    public WebElement proceedToCheckout;
+
+    @FindBy(xpath = "//u[text()='Register / Login']")
+    public  WebElement registerLoginButton;
+
+    @FindBy(xpath = "(//h3)[1]")
+    public  WebElement deliverAdress;
+
+
+    @FindBy(xpath = "(//h3)[2]")
+    public  WebElement billingAdress;
+
+    @FindBy(xpath = "//textarea")
+    public WebElement textArea;
+
+    @FindBy(xpath = "//a[@href='/payment']")
+    public WebElement placeOrder;
+
+    @FindBy(xpath = "//div[@class='col-sm-12 form-group']")
+    public  WebElement cardName;
+
+
+    @FindBy(xpath = "(//button)[1]")
+    public WebElement payAndOrder;
+
+    @FindBy(xpath = "//p[@style='font-size: 20px; font-family: garamond;']")
+    public  WebElement success;
 }
 

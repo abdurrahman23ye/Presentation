@@ -1,4 +1,4 @@
-@tumu
+
 Feature: Register user and Login
 
 
