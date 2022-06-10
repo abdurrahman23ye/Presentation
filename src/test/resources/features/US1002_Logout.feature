@@ -8,7 +8,7 @@ Feature:Logout, Login with existing email
     And Verify that home page is visible successfully
     And Click on Signup  Login button
 
-   @Task
+   @task
   Scenario: Logout User
 
 
@@ -19,7 +19,7 @@ Feature:Logout, Login with existing email
   And Click Logout button
   And Verify that user is navigated to login page
 
-     @Task
+     @task
     Scenario: Signup name and already registered email address
 
 
@@ -27,3 +27,6 @@ Feature:Logout, Login with existing email
   And Enter name and already registered email address
   And Click Signup button
   And Verify error Email Address already exist! is visible
+
+
+

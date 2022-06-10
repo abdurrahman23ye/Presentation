@@ -10,7 +10,7 @@ Feature: Register user and Login
     And Click on Signup  Login button
 
   @task
-  Scenario: Register User
+  Scenario: Register User is enable
 
     And Verify New User Signup! is visible
     And Enter name and email address

@@ -11,9 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.MainPage;
-import pages.SignUpPage;
-import pages.SignUp_Login;
+import pages.*;
 import utilities.ConfigReader;
 import utilities.Driver;
 
@@ -27,6 +25,8 @@ public class MyStepdefs {
     Actions action=new Actions(Driver.getDriver());
     Faker fk=new Faker();
     String loginURL;
+    ContactPage contactPage=new ContactPage();
+    TestCasesPage testCasesPage=new TestCasesPage();
 
     @Given("Launch browser")
     public void launchBrowser() {}
@@ -239,5 +239,69 @@ public class MyStepdefs {
     @And("Verify error Email Address already exist! is visible")
     public void verifyErrorEmailAddressAlreadyExistIsVisible() {
         Assert.assertTrue(signUp_login.emailAlreadyExist.isDisplayed());
+    }
+
+    @And("Click on Contact Us button")
+    public void clickOnContactUsButton() {
+
+        contactPage.contactUsLink.click();
+    }
+
+    @And("Verify GET IN TOUCH is visible")
+    public void verifyGETINTOUCHIsVisible() {
+
+
+        js.executeScript("window.scrollBy(0,250)");
+        Assert.assertTrue(contactPage.getInTouch.isDisplayed());
+    }
+
+    @And("Enter name, email, subject and message")
+    public void enterNameEmailSubjectAndMessage() {
+
+        contactPage.name.sendKeys(ConfigReader.getProperty("dogruisim"));
+
+        action.sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("dogruEmail")).perform();
+        action.sendKeys(Keys.TAB).sendKeys("thanks to give us practicing opportunities").perform();
+        action.sendKeys(Keys.TAB).sendKeys("thanks to give us practicing opportunities").perform();
+    }
+
+    @And("Upload file")
+    public void uploadFile() {
+        contactPage.file.sendKeys("C:\\Users\\asus\\Desktop\\290.txt");
+    }
+
+    @And("Click Submit button")
+    public void clickSubmitButton() {
+        contactPage.submit.click();
+    }
+
+    @And("Click OK button")
+    public void clickOKButton() {
+
+        Driver.getDriver().switchTo().alert().accept();
+    }
+
+
+    @And("Verify success message Success! Your details have been submitted successfully. is visible")
+    public void verifySuccessMessageSuccessYourDetailsHaveBeenSubmittedSuccessfullyIsVisible() {
+        Assert.assertTrue(contactPage.success.isDisplayed());
+    }
+
+    @And("Click Home button and verify that landed to home page successfully")
+    public void clickHomeButtonAndVerifyThatLandedToHomePageSuccessfully() {
+        contactPage.home.click();
+        Assert.assertEquals(Driver.getDriver().getCurrentUrl(),ConfigReader.getProperty("mainPage"));
+    }
+
+    @Given("Click on Test Cases button")
+    public void clickOnTestCasesButton() {
+
+        testCasesPage.TestCases.click();
+    }
+
+    @And("Verify user is navigated to test cases page successfully")
+    public void verifyUserIsNavigatedToTestCasesPageSuccessfully() {
+        Driver.getDriver().getCurrentUrl().equals(ConfigReader.getProperty("testCasePage"));
+
     }
 }
