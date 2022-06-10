@@ -5,7 +5,7 @@ Feature: US1009_Verify subscription in home and cart pages
     And Navigate to url 'mainPage'
     And Verify that home page is visible successfully
 
-    @try
+    @task
   Scenario: Verify subscription in home
 
   Given Launch browser
@@ -17,7 +17,7 @@ Feature: US1009_Verify subscription in home and cart pages
   And Verify success message You have been successfully subscribed! is visible
   And Close the page
 
-    @try
+    @task
     Scenario:
 
 

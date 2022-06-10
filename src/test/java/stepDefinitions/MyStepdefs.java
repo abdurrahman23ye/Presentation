@@ -23,14 +23,16 @@ import java.time.Duration;
 public class MyStepdefs {
     MainPage mainPage=new MainPage();
     SignUp_Login signUp_login=new SignUp_Login();
+    CartPage cartPage=new CartPage();
     SignUpPage signUpPage=new SignUpPage();
+    ContactPage contactPage=new ContactPage();
+    TestCasesPage testCasesPage=new TestCasesPage();
+    ProductPage productPage=new ProductPage();
+    
     JavascriptExecutor js= (JavascriptExecutor) Driver.getDriver();
     Actions action=new Actions(Driver.getDriver());
     Faker fk=new Faker();
     String loginURL;
-    ContactPage contactPage=new ContactPage();
-    TestCasesPage testCasesPage=new TestCasesPage();
-    ProductPage productPage=new ProductPage();
     TakesScreenshot ts= (TakesScreenshot) Driver.getDriver();
     WebDriverWait wait= new WebDriverWait(Driver.getDriver(),Duration.ofSeconds(15));
 
@@ -413,4 +415,59 @@ public class MyStepdefs {
     public void clickCartButton() {
         mainPage.cartButton.click();
     }
+
+
+    @And("Hover first product and click Add to cart")
+    public void hoverFirstProductAndClickAddToCart() {
+
+
+        action.sendKeys(Keys.PAGE_DOWN).perform();
+
+
+        action.moveToElement(productPage.listedFirstProducts).perform();
+        productPage.listedFirstProductAddCart.click();
+    }
+
+    @And("Click Continue Shopping button")
+    public void clickContinueShoppingButton() {
+        productPage.continueShoppingButton.click();
+    }
+
+    @And("Hover over second product and click Add to cart")
+    public void hoverOverSecondProductAndClickAddToCart() {
+        action.moveToElement(productPage.listedSecondProducts).perform();
+        productPage.listedSecondProductAddCart.click();
+    }
+
+    @And("Click View Cart button")
+    public void clickViewCartButton() {
+        productPage.viewCart.click();
+    }
+
+    @And("Verify both products are added to Cart")
+    public void verifyBothProductsAreAddedToCart() {
+
+        Assert.assertTrue(cartPage.firstProduct.isDisplayed());
+        Assert.assertTrue(cartPage.secondProduct.isDisplayed());
+    }
+
+    @And("Verify their prices, quantity and total price")
+    public void verifyTheirPricesQuantityAndTotalPrice() {
+
+        int inputAddedFirstCart= Integer.parseInt(cartPage.addedFirstProductPrice.getText().replace("Rs. ",""));
+        int inputAddedFirstQuan= Integer.parseInt(cartPage.firstAddedProductQuantity.getText());
+        int inputAddedFirstTotal= Integer.parseInt(cartPage.addedfirstProductPriceTotal.getText().replace("Rs. ",""));
+
+        int inputAddedSecondCart= Integer.parseInt(cartPage.addedSecondProductPrice.getText().replace("Rs. ",""));
+        int inputAddedSecondQuan= Integer.parseInt(cartPage.secondAddedProductQuantity.getText());
+        int inputAddedSecondTotal= Integer.parseInt(cartPage.addedSecondProductPriceTotal.getText().replace("Rs. ",""));
+
+
+
+        Assert.assertTrue(inputAddedFirstCart*inputAddedFirstQuan==inputAddedFirstTotal);
+        Assert.assertTrue(inputAddedSecondCart*inputAddedSecondQuan==inputAddedSecondTotal);
+
+
+    }
 }
+
