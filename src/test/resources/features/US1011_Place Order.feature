@@ -1,5 +1,5 @@
 Feature: US1011 Place Order:
-  @Try
+  @task
   Scenario: Place Order: Register while Checkout
 
 
