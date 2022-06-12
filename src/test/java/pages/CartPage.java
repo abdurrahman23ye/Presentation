@@ -73,5 +73,10 @@ public class CartPage {
 
     @FindBy(xpath = "//b")
     public WebElement cartIsEmptyLabel;
+
+    //1015
+
+    @FindBy(xpath = "//a[text()='Winter Top']")
+    public WebElement searchedAndAddedProduct;
 }
 

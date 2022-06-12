@@ -614,5 +614,110 @@ public class MyStepdefs {
 
 
     }
+
+    @And("Verify that categories are visible on left side bar")
+    public void verifyThatCategoriesAreVisibleOnLeftSideBar() {
+
+        js.executeScript("window.scrollBy(0,250)");
+
+        Assert.assertTrue(mainPage.categories.isDisplayed());
+    }
+
+    @And("Click on Women category")
+    public void clickOnWomenCategory() {
+
+        js.executeScript("window.scrollBy(0,450)");
+
+        mainPage.categoryOfWomen.click();
+    }
+
+    @And("Click on any category link under Women category, for example: Dress")
+    public void clickOnAnyCategoryLinkUnderWomenCategoryForExampleDress() {
+
+        js.executeScript("window.scrollBy(0,450)");
+
+        mainPage.categoryWomanDress.click();//navigate to product page
+    }
+
+    @And("Verify that category page is displayed and confirm text WOMEN - TOPS PRODUCTS")
+    public void verifyThatCategoryPageIsDisplayedAndConfirmTextWOMENTOPSPRODUCTS() {
+
+        Assert.assertTrue(productPage.womanTopProducts.isDisplayed());
+    }
+
+    @And("On left side bar, click on any sub-category link of Men category")
+    public void onLeftSideBarClickOnAnySubCategoryLinkOfMenCategory() throws InterruptedException {
+        js.executeScript("window.scrollBy(0,450)");
+
+        productPage.menCategory.click();
+
+        Thread.sleep(3000);
+
+        productPage.menSubCategoryJeans.click();
+    }
+
+    @And("Verify that user is navigated to that category page")
+    public void verifyThatUserIsNavigatedToThatCategoryPage() {
+
+        Assert.assertTrue(Driver.
+                getDriver().getCurrentUrl().equals(ConfigReader.getProperty("menSubCategoryJeans")));
+    }
+
+    @And("Verify that Brands are visible on left side bar")
+    public void verifyThatBrandsAreVisibleOnLeftSideBar() {
+        js.executeScript("window.scrollBy(0,450)");
+        
+        Assert.assertTrue(productPage.brandsLabel.isDisplayed());
+        
+    }
+
+    @And("Click on any brand name")
+    public void clickOnAnyBrandName() {
+
+        productPage.brandPolo.click();
+    }
+
+    @And("Verify that user is navigated to brand page and brand products are displayed")
+    public void verifyThatUserIsNavigatedToBrandPageAndBrandProductsAreDisplayed() {
+
+        Assert.assertTrue(productPage.brandProductsLabel.isDisplayed());
+
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl()
+                .equals(ConfigReader.getProperty("polo")));
+    }
+
+    @And("On left side bar, click on any other brand link")
+    public void onLeftSideBarClickOnAnyOtherBrandLink() {
+        js.executeScript("window.scrollBy(0,450)");
+
+        productPage.brandMadame.click();
+    }
+
+    @And("Verify that user is navigated to that brand page and can see products")
+    public void verifyThatUserIsNavigatedToThatBrandPageAndCanSeeProducts() {
+
+        Assert.assertTrue(productPage.brandProductsLabel.isDisplayed());
+
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl()
+                .equals(ConfigReader.getProperty("madame")));
+    }
+
+    @And("Add those products to cart")
+    public void addThoseProductsToCart() {
+
+        productPage.addCarttoProductAfterSearch.click();
+    }
+
+    @And("Again, go to Cart page")
+    public void againGoToCartPage() {
+
+        cartPage.cartButton.click();
+    }
+
+    @And("Verify that those products are visible in cart after login as well")
+    public void verifyThatThoseProductsAreVisibleInCartAfterLoginAsWell() {
+
+        Assert.assertTrue(cartPage.searchedAndAddedProduct.isDisplayed());
+    }
 }
 

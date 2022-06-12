@@ -62,4 +62,32 @@ public class ProductPage {
 
     @FindBy(xpath = "//img[@alt='ecommerce website products']")
     public WebElement searchResult;
+
+    @FindBy(xpath = "//h2[@class='title text-center']") //navigated from main page
+    public WebElement womanTopProducts;
+
+    @FindBy(xpath = "(//a[@data-toggle='collapse'])[2]")
+    public WebElement menCategory;
+
+    @FindBy(xpath = "//a[@href='/category_products/6']")
+    public  WebElement menSubCategoryJeans;
+
+    @FindBy(xpath = "//h2[text()='Brands']")
+    public  WebElement brandsLabel;
+
+     @FindBy(xpath = "//a[@href='/brand_products/Polo']")
+    public WebElement brandPolo;
+
+     @FindBy(xpath = "//h2[@class='title text-center']")
+    public WebElement brandProductsLabel;
+
+    @FindBy(xpath = "//a[@href='/brand_products/Madame']")
+    public WebElement brandMadame;
+
+    @FindBy(xpath = "(//a[@class='btn btn-default add-to-cart'])[1]")
+    public WebElement addCarttoProductAfterSearch;
+
+
+
+
 }

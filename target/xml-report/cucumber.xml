@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="23.064">
-    <testcase classname="US1013: Remove product from cart" name="Remove product from cart" time="22.26">
-        <failure message="expected:&lt;[Cart is empty!]&gt; but was:&lt;[]&gt;" type="org.junit.ComparisonFailure">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="23.4">
+    <testcase classname="US1014_View Categories" name="View category products" time="22.875">
+        <system-out>
             <![CDATA[Given Launch browser........................................................passed
 And Navigate to url 'mainPage'..............................................passed
-And Verify that home page is visible successfully...........................passed
-And Add products to cart....................................................passed
-And Click View Cart button..................................................passed
-And Verify that cart page is displayed......................................passed
-And Click X button corresponding to particular product......................passed
-And Verify that product is removed from the cart............................failed
-
-StackTrace:
-org.junit.ComparisonFailure: expected:<[Cart is empty!]> but was:<[]>
-	at org.junit.Assert.assertEquals(Assert.java:117)
-	at org.junit.Assert.assertEquals(Assert.java:146)
-	at stepDefinitions.MyStepdefs.verifyThatProductIsRemovedFromTheCart(MyStepdefs.java:611)
-	at ✽.Verify that product is removed from the cart(file:///C:/Users/asus/IdeaProjects/com.Automationexercise_Cucumber/src/test/resources/features/US1013_Remove%20product%20from%20cart.feature:12)
+And Verify that categories are visible on left side bar.....................passed
+And Click on Women category.................................................passed
+And Click on any category link under Women category, for example: Dress.....passed
+And Verify that category page is displayed and confirm text WOMEN - TOPS PRODUCTS.passed
+And On left side bar, click on any sub-category link of Men category........passed
+And Verify that user is navigated to that category page.....................passed
+And Close the page..........................................................passed
 ]]>
-        </failure>
+        </system-out>
     </testcase>
 </testsuite>
