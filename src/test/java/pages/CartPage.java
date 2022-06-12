@@ -67,5 +67,11 @@ public class CartPage {
 
     @FindBy(xpath = "//p[@style='font-size: 20px; font-family: garamond;']")
     public  WebElement success;
+
+    @FindBy(xpath = "//i[@class='fa fa-times']")
+    public WebElement removeAddedFirstProductFromCart;
+
+    @FindBy(xpath = "//b")
+    public WebElement cartIsEmptyLabel;
 }
 

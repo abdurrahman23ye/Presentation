@@ -514,9 +514,13 @@ public class MyStepdefs {
     }
 
     @And("Add products to cart")
-    public void addProductsToCart() {
+    public void addProductsToCart() throws InterruptedException {
+
+        Thread.sleep(2000);
         
         mainPage.addProductToCart1.click();
+
+        Thread.sleep(2000);
 
     }
 
@@ -591,6 +595,24 @@ public class MyStepdefs {
     public void verifySuccessMessageYourOrderHasBeenPlacedSuccessfully() {
 
         Assert.assertTrue(cartPage.success.isDisplayed());
+    }
+
+    @And("Click X button corresponding to particular product")
+    public void clickXButtonCorrespondingToParticularProduct() {
+
+        js.executeScript("window.scrollBy(0,250)");
+
+        cartPage.removeAddedFirstProductFromCart.click();
+    }
+
+    @And("Verify that product is removed from the cart")
+    public void verifyThatProductIsRemovedFromTheCart() {
+
+
+
+        Assert.assertTrue(cartPage.cartIsEmptyLabel.isEnabled());
+
+
     }
 }
 

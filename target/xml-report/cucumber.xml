@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="20.904">
-    <testcase classname="US1010_Add products in cart" name="_2" time="20.565">
-        <system-out>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="23.064">
+    <testcase classname="US1013: Remove product from cart" name="Remove product from cart" time="22.26">
+        <failure message="expected:&lt;[Cart is empty!]&gt; but was:&lt;[]&gt;" type="org.junit.ComparisonFailure">
             <![CDATA[Given Launch browser........................................................passed
 And Navigate to url 'mainPage'..............................................passed
 And Verify that home page is visible successfully...........................passed
-Given Click View Product for any product on home page.......................passed
-And Verify product detail is opened.........................................passed
-And Increase quantity to 4..................................................passed
-And Click Add to cart button................................................passed
+And Add products to cart....................................................passed
 And Click View Cart button..................................................passed
-And Verify that product is displayed in cart page with exact quantity.......passed
+And Verify that cart page is displayed......................................passed
+And Click X button corresponding to particular product......................passed
+And Verify that product is removed from the cart............................failed
+
+StackTrace:
+org.junit.ComparisonFailure: expected:<[Cart is empty!]> but was:<[]>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at stepDefinitions.MyStepdefs.verifyThatProductIsRemovedFromTheCart(MyStepdefs.java:611)
+	at ✽.Verify that product is removed from the cart(file:///C:/Users/asus/IdeaProjects/com.Automationexercise_Cucumber/src/test/resources/features/US1013_Remove%20product%20from%20cart.feature:12)
 ]]>
-        </system-out>
+        </failure>
     </testcase>
 </testsuite>

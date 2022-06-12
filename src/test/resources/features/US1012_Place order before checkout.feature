@@ -5,7 +5,7 @@ Feature: US1012_Place order: Register or login before checkout
     And Navigate to url 'mainPage'
     And Verify that home page is visible successfully
     And Click on Signup  Login button
-  @try
+  @task
   Scenario: Register before checkout
 
 
@@ -30,7 +30,7 @@ Feature: US1012_Place order: Register or login before checkout
   And Click Delete Account button
   And Close the page
 
-    @try
+    @task
     Scenario: Login before checkout
 
 
