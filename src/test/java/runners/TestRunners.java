@@ -16,7 +16,8 @@ import org.junit.runner.RunWith;
         dryRun = false //dryRun=true adımlarda eksik varsa onu bildirir, calistirmaz.
 )
 
-public class Runners {
+public class TestRunners {
+
 
 
 

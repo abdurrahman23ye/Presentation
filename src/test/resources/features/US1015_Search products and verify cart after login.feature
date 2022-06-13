@@ -1,6 +1,6 @@
 Feature: US1015_Search Products and Verify Cart After Login
 
-  @try
+  @task
   Scenario: Search Products and Verify Cart After Login
 
   Given Launch browser

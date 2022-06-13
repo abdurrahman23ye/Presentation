@@ -15,6 +15,7 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 import javax.swing.*;
+import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -718,6 +719,37 @@ public class MyStepdefs {
     public void verifyThatThoseProductsAreVisibleInCartAfterLoginAsWell() {
 
         Assert.assertTrue(cartPage.searchedAndAddedProduct.isDisplayed());
+    }
+
+    @And("Verify Write Your Review is visible")
+    public void verifyWriteYourReviewIsVisible() {
+        js.executeScript("window.scrollBy(0,250)");
+
+        Assert.assertTrue(productDetailPage.writeRewiew.isDisplayed());
+    }
+
+    @And("Enter name, email and review")
+    public void enterNameEmailAndReview() throws InterruptedException {
+        action.moveToElement(productDetailPage.reviewName).click()
+                .sendKeys(ConfigReader.getProperty("dogruisim"));
+        action.sendKeys(Keys.TAB).perform();
+        action.sendKeys(ConfigReader.getProperty("dogruEmail"));
+        action.sendKeys(Keys.TAB).perform();
+        action.sendKeys("add review here......").perform();
+    }
+
+    @And("Click Submit button\\(Review)")
+    public void clickSubmitButtonReview() {
+        productDetailPage.reviewSubmit.click();
+    }
+
+
+    @And("Verify success message Thank you for your review.")
+    public void verifySuccessMessageThankYouForYourReview() {
+
+        wait.until(ExpectedConditions.visibilityOf(productDetailPage.rewiewSuccess));
+
+        Assert.assertTrue(productDetailPage.rewiewSuccess.isEnabled());
     }
 }
 

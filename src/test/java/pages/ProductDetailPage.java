@@ -21,6 +21,21 @@ public class ProductDetailPage {
     @FindBy(xpath = "//button[@class='disabled']")
     public WebElement addedProductQuantity;
 
+    @FindBy(xpath = "//a[@href='#reviews']")
+    public  WebElement writeRewiew;
+
+    @FindBy(xpath = "//input[@id='name']")
+    public  WebElement reviewName;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement reviewSubmit;
+
+    //@FindBy(xpath = "//span[@style='font-size: 20px;']")
+    //public WebElement rewiewSuccess;
+
+    @FindBy(xpath = "//*[text()='Thank you for your review.']")
+    public WebElement rewiewSuccess;
+
 
 
 }
