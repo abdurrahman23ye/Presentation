@@ -1,69 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="34.377">
-    <testcase classname="US1016_Add review on product" name="Add review on product" time="33.36">
-        <failure message="Step [Verify success message {string}] is defined with 0 parameters at 'stepDefinitions.MyStepdefs.verifySuccessMessageThankYouForYourReview()'.&#10;However, the gherkin step has 1 arguments:&#10; * 'Thank you for your review.'&#10;Step text: Verify success message 'Thank you for your review.'" type="io.cucumber.core.exception.CucumberException">
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="32.862">
+    <testcase classname="US1017_Add to cart from Recommended items" name="Add to cart from Recommended items" time="32.148">
+        <failure message="element not interactable&#10;  (Session info: chrome=102.0.5005.63)&#10;Build info: version: '4.1.3', revision: '7b1ebf28ef'&#10;System info: host: 'LAPTOP-MN0HD9MC', ip: '192.168.1.13', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [ffb25f5e203003bd65265e561b57b6e4, clickElement {id=16176ef7-6472-45b7-8926-7b5c4fa35ec0}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.63, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: C:\Users\asus\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:59144}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59144/devtoo..., se:cdpVersion: 102.0.5005.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Element: [[ChromeDriver: chrome on WINDOWS (ffb25f5e203003bd65265e561b57b6e4)] -&gt; xpath: (//a[@data-product-id=2])[3]]&#10;Session ID: ffb25f5e203003bd65265e561b57b6e4" type="org.openqa.selenium.ElementNotInteractableException">
             <![CDATA[Given Launch browser........................................................passed
 And Navigate to url 'mainPage'..............................................passed
-And Click on Products button................................................passed
-And Verify user is navigated to ALL PRODUCTS page successfully..............passed
-And Click on View Product of first product..................................passed
-And Verify Write Your Review is visible.....................................passed
-And Enter name, email and review............................................passed
-And Click Submit button(Review).............................................passed
-And Verify success message 'Thank you for your review.'.....................failed
+And Scroll to bottom of page................................................passed
+And Verify RECOMMENDED ITEMS are visible....................................passed
+And Click on Add To Cart on Recommended product.............................failed
+And Click View Cart button..................................................skipped
+And Verify that product is displayed in cart page...........................skipped
 
 StackTrace:
-io.cucumber.core.exception.CucumberException: Step [Verify success message {string}] is defined with 0 parameters at 'stepDefinitions.MyStepdefs.verifySuccessMessageThankYouForYourReview()'.
-However, the gherkin step has 1 arguments:
- * 'Thank you for your review.'
-Step text: Verify success message 'Thank you for your review.'
-	at io.cucumber.core.runner.PickleStepDefinitionMatch.arityMismatch(PickleStepDefinitionMatch.java:83)
-	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:42)
-	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
-	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:85)
-	at io.cucumber.core.runner.TestStep.run(TestStep.java:57)
-	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
-	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
-	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
-	at io.cucumber.junit.PickleRunners$NoStepDescriptions.lambda$run$0(PickleRunners.java:151)
-	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:129)
-	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
-	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:129)
-	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:148)
-	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)
-	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)
-	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:196)
-	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:89)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.apache.maven.surefire.junitcore.pc.Scheduler$1.run(Scheduler.java:405)
-	at org.apache.maven.surefire.junitcore.pc.InvokerStrategy.schedule(InvokerStrategy.java:54)
-	at org.apache.maven.surefire.junitcore.pc.Scheduler.schedule(Scheduler.java:362)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
-	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
-	at io.cucumber.junit.Cucumber$RunBeforeAllHooks.evaluate(Cucumber.java:266)
-	at io.cucumber.junit.Cucumber$RunAfterAllHooks.evaluate(Cucumber.java:281)
-	at io.cucumber.junit.Cucumber$StartTestRun.evaluate(Cucumber.java:233)
-	at io.cucumber.junit.Cucumber$FinishTestRun.evaluate(Cucumber.java:248)
-	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
-	at org.junit.runners.Suite.runChild(Suite.java:128)
-	at org.junit.runners.Suite.runChild(Suite.java:27)
-	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
-	at org.apache.maven.surefire.junitcore.pc.Scheduler$1.run(Scheduler.java:405)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:834)
+org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=102.0.5005.63)
+Build info: version: '4.1.3', revision: '7b1ebf28ef'
+System info: host: 'LAPTOP-MN0HD9MC', ip: '192.168.1.13', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ffb25f5e203003bd65265e561b57b6e4, clickElement {id=16176ef7-6472-45b7-8926-7b5c4fa35ec0}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.63, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: C:\Users\asus\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:59144}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59144/devtoo..., se:cdpVersion: 102.0.5005.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (ffb25f5e203003bd65265e561b57b6e4)] -> xpath: (//a[@data-product-id=2])[3]]
+Session ID: ffb25f5e203003bd65265e561b57b6e4
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy22.click(Unknown Source)
+	at stepDefinitions.MyStepdefs.clickOnAddToCartOnRecommendedProduct(MyStepdefs.java:774)
+	at ✽.Click on Add To Cart on Recommended product(file:///C:/Users/asus/IdeaProjects/com.Automationexercise_Cucumber/src/test/resources/features/US1017_Add%20to%20cart%20from%20recommended%20items.feature:10)
 ]]>
         </failure>
     </testcase>

@@ -12,3 +12,4 @@ Feature: US1016_Add review on product
   And Enter name, email and review
   And Click Submit button(Review)
   And Verify success message Thank you for your review.
+  And Close the page

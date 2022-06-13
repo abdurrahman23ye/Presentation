@@ -69,4 +69,16 @@ public class MainPage {
     @FindBy(xpath = "//a[@href='/category_products/1']")
     public WebElement categoryWomanDress;
 
+    @FindBy(xpath = "(//h2[@class='title text-center'])[2]")
+    public WebElement recommendedItemsLabel;
+
+    @FindBy(xpath = "(//a[@data-product-id=2])[3]")
+    public WebElement addRecommendedItem;
+
+    @FindBy(xpath = "(//i[@class='fa fa-angle-right'])[2]")
+    public WebElement otherRecommendedItems;
+
+    @FindBy(xpath = "(//a[@data-product-id=4])[3]")
+    public WebElement addRecommendedItem2;
+
 }

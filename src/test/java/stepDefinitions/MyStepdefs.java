@@ -751,5 +751,39 @@ public class MyStepdefs {
 
         Assert.assertTrue(productDetailPage.rewiewSuccess.isEnabled());
     }
+
+    @And("Scroll to bottom of page")
+    public void scrollToBottomOfPage() {
+
+        int input=15;
+        int count=0;
+
+        while (input>count)
+        {action.sendKeys(Keys.PAGE_DOWN).perform();
+            count++;}
+    }
+
+    @And("Verify RECOMMENDED ITEMS are visible")
+    public void verifyRECOMMENDEDITEMSAreVisible() {
+        Assert.assertTrue(mainPage.recommendedItemsLabel.isDisplayed());
+    }
+
+    @And("Click on Add To Cart on Recommended product")
+    public void clickOnAddToCartOnRecommendedProduct() {
+
+       wait.until(ExpectedConditions.elementToBeClickable(mainPage.addRecommendedItem));
+        mainPage.addRecommendedItem.click();
+
+
+
+    }
+
+    @And("Verify that product is displayed in cart page")
+    public void verifyThatProductIsDisplayedInCartPage() {
+
+        js.executeScript("window.scrollBy(0,250)");
+
+        Assert.assertTrue(cartPage.recommendedAnyProduct.isDisplayed());
+    }
 }
 

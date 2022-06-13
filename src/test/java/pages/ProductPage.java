@@ -60,8 +60,7 @@ public class ProductPage {
     @FindBy(xpath = "(//h2)[3]")
     public WebElement searchedProducts;
 
-    @FindBy(xpath = "//img[@alt='ecommerce website products']")
-    public WebElement searchResult;
+
 
     @FindBy(xpath = "//h2[@class='title text-center']") //navigated from main page
     public WebElement womanTopProducts;

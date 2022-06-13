@@ -78,5 +78,9 @@ public class CartPage {
 
     @FindBy(xpath = "//a[text()='Winter Top']")
     public WebElement searchedAndAddedProduct;
+
+    //1017
+    @FindBy(xpath = "(//img)[2]")
+    public  WebElement recommendedAnyProduct;
 }
 
