@@ -82,5 +82,28 @@ public class CartPage {
     //1017
     @FindBy(xpath = "(//img)[2]")
     public  WebElement recommendedAnyProduct;
+
+    @FindBy(xpath = "(//li[@class='address_address1 address_address2'])[1]")
+    public WebElement adress1;
+
+    @FindBy(xpath = "(//li[@class='address_address1 address_address2'])[2]")
+    public WebElement adress3;
+
+    @FindBy(xpath = "(//li[@class='address_address1 address_address2'])[5]")
+    public WebElement adress4;
+
+    @FindBy(xpath = "(//li[@class='address_address1 address_address2'])[4]")
+    public WebElement adress2;
+
+    @FindBy(xpath = "//a[@href='/download_invoice/500']")
+    public WebElement downloadInvoice;
+
+    @FindBy(xpath = "//p[@style='font-size: 20px; font-family: garamond;']")
+    public WebElement verifyDownloadSuccess;
+
+    @FindBy(xpath = "//a[@data-qa='continue-button']")
+    public WebElement continueAfterInvoice;
+
+
 }
 

@@ -1,6 +1,6 @@
 Feature: US1017_Add to cart from Recommended items
 
-  @try
+  @task
   Scenario: Add to cart from Recommended items
 
   Given Launch browser

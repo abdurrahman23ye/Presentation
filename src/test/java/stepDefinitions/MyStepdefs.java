@@ -20,6 +20,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.Duration;
 
 public class MyStepdefs {
@@ -119,8 +121,8 @@ public class MyStepdefs {
         action.sendKeys(Keys.TAB).sendKeys(fk.name().name()).perform();
         action.sendKeys(Keys.TAB).sendKeys( fk.name().lastName()).perform();
         action.sendKeys(Keys.TAB).sendKeys( fk.company().name()).perform();
-        action.sendKeys(Keys.TAB).sendKeys( fk.address().fullAddress()).perform();
-        action.sendKeys(Keys.TAB).sendKeys( fk.address().fullAddress()).perform();
+        action.sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("adress1")).perform();
+        action.sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("adress2")).perform();
         action.sendKeys(Keys.TAB).perform();
         action.sendKeys(Keys.TAB).sendKeys(fk.address().country()).perform();
         action.sendKeys(Keys.TAB).sendKeys(fk.address().state()).perform();
@@ -784,6 +786,35 @@ public class MyStepdefs {
         js.executeScript("window.scrollBy(0,250)");
 
         Assert.assertTrue(cartPage.recommendedAnyProduct.isDisplayed());
+    }
+
+    @And("Verify that the delivery address is same address filled at the time registration of account")
+    public void verifyThatTheDeliveryAddressIsSameAddressFilledAtTheTimeRegistrationOfAccount() {
+
+        Assert.assertTrue(cartPage.adress1.getText().equals(ConfigReader.getProperty("adress1")));
+        Assert.assertTrue(cartPage.adress4.getText().equals(ConfigReader.getProperty("adress2")));
+
+    }
+
+    @And("Verify that the billing address is same address filled at the time registration of account")
+    public void verifyThatTheBillingAddressIsSameAddressFilledAtTheTimeRegistrationOfAccount() {
+        Assert.assertTrue(cartPage.adress2.getText().equals(ConfigReader.getProperty("adress1")));
+
+        Assert.assertTrue(cartPage.adress3.getText().equals(ConfigReader.getProperty("adress2")));
+
+    }
+
+    @And("Click Download Invoice button and verify invoice is downloaded successfully.")
+    public void clickDownloadInvoiceButtonAndVerifyInvoiceIsDownloadedSuccessfully() {
+
+        cartPage.downloadInvoice.click();
+        Assert.assertTrue(cartPage.verifyDownloadSuccess.isDisplayed());
+        Assert.assertTrue(Files.exists(Paths.get("C:\\Users\\asus\\Downloads\\invoice.txt")));
+    }
+
+    @And("Click Continue button\\(After download invoice)")
+    public void clickContinueButtonAfterDownloadInvoice() {
+        cartPage.continueAfterInvoice.click();
     }
 }
 

@@ -1,46 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="32.862">
-    <testcase classname="US1017_Add to cart from Recommended items" name="Add to cart from Recommended items" time="32.148">
-        <failure message="element not interactable&#10;  (Session info: chrome=102.0.5005.63)&#10;Build info: version: '4.1.3', revision: '7b1ebf28ef'&#10;System info: host: 'LAPTOP-MN0HD9MC', ip: '192.168.1.13', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [ffb25f5e203003bd65265e561b57b6e4, clickElement {id=16176ef7-6472-45b7-8926-7b5c4fa35ec0}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.63, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: C:\Users\asus\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:59144}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59144/devtoo..., se:cdpVersion: 102.0.5005.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Element: [[ChromeDriver: chrome on WINDOWS (ffb25f5e203003bd65265e561b57b6e4)] -&gt; xpath: (//a[@data-product-id=2])[3]]&#10;Session ID: ffb25f5e203003bd65265e561b57b6e4" type="org.openqa.selenium.ElementNotInteractableException">
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="40.752">
+    <testcase classname="US1018 Verify address details in checkout page" name="Verify address details in checkout page" time="40.089">
+        <failure message="" type="java.lang.AssertionError">
             <![CDATA[Given Launch browser........................................................passed
 And Navigate to url 'mainPage'..............................................passed
-And Scroll to bottom of page................................................passed
-And Verify RECOMMENDED ITEMS are visible....................................passed
-And Click on Add To Cart on Recommended product.............................failed
-And Click View Cart button..................................................skipped
-And Verify that product is displayed in cart page...........................skipped
+And Verify that home page is visible successfully...........................passed
+And Click on Signup  Login button...........................................passed
+And Enter name and email address............................................passed
+And Click Signup button.....................................................passed
+And Verify that ENTER ACCOUNT INFORMATION is visible........................passed
+And Fill details: Title, Name, Email, Password, Date of birth...............passed
+And Select checkbox Sign up for our newsletter!.............................passed
+And Select checkbox Receive special offers from our partners!Fill details: First name, Last name, Company, Address,.passed
+And Click Create Account button.............................................passed
+And Verify that ACCOUNT CREATED! is visible.................................passed
+And Click Continue button...................................................passed
+And Verify that Logged in as username is visible............................passed
+And Add products to cart....................................................passed
+And Click View Cart button..................................................passed
+And Verify that cart page is displayed......................................passed
+And Click Proceed To Checkout...............................................passed
+And Verify that the delivery address is same address filled at the time registration of account.passed
+And Verify that the billing address is same address filled at the time registration of account.failed
+And Click Delete Account button.............................................skipped
 
 StackTrace:
-org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=102.0.5005.63)
-Build info: version: '4.1.3', revision: '7b1ebf28ef'
-System info: host: 'LAPTOP-MN0HD9MC', ip: '192.168.1.13', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [ffb25f5e203003bd65265e561b57b6e4, clickElement {id=16176ef7-6472-45b7-8926-7b5c4fa35ec0}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.63, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: C:\Users\asus\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:59144}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59144/devtoo..., se:cdpVersion: 102.0.5005.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (ffb25f5e203003bd65265e561b57b6e4)] -> xpath: (//a[@data-product-id=2])[3]]
-Session ID: ffb25f5e203003bd65265e561b57b6e4
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-	at com.sun.proxy.$Proxy22.click(Unknown Source)
-	at stepDefinitions.MyStepdefs.clickOnAddToCartOnRecommendedProduct(MyStepdefs.java:774)
-	at ✽.Click on Add To Cart on Recommended product(file:///C:/Users/asus/IdeaProjects/com.Automationexercise_Cucumber/src/test/resources/features/US1017_Add%20to%20cart%20from%20recommended%20items.feature:10)
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at stepDefinitions.MyStepdefs.verifyThatTheBillingAddressIsSameAddressFilledAtTheTimeRegistrationOfAccount(MyStepdefs.java:799)
+	at ✽.Verify that the billing address is same address filled at the time registration of account(file:///C:/Users/asus/IdeaProjects/com.Automationexercise_Cucumber/src/test/resources/features/US1018_Verify%20address%20details%20in%20checkout%20page.feature:25)
 ]]>
         </failure>
     </testcase>
