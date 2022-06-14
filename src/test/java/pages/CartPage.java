@@ -82,5 +82,19 @@ public class CartPage {
     //1017
     @FindBy(xpath = "(//img)[2]")
     public  WebElement recommendedAnyProduct;
+
+    @FindBy(xpath = "(//li[@class='address_address1 address_address2'])[1]")
+    public WebElement adress1;
+
+    @FindBy(xpath = "(//li[@class='address_address1 address_address2'])[2]")
+    public WebElement adress3;
+
+    @FindBy(xpath = "(//li[@class='address_address1 address_address2'])[5]")
+    public WebElement adress4;
+
+    @FindBy(xpath = "(//li[@class='address_address1 address_address2'])[4]")
+    public WebElement adress2;
+
+
 }
 
