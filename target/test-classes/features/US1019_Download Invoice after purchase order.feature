@@ -1,6 +1,6 @@
 Feature: US1019_Download Invoice after purchase order
 
-  @try
+  @task
   Scenario: Download Invoice after purchase order
 
   Given Launch browser

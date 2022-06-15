@@ -1,36 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="40.752">
-    <testcase classname="US1018 Verify address details in checkout page" name="Verify address details in checkout page" time="40.089">
-        <failure message="" type="java.lang.AssertionError">
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="10.682">
+    <testcase classname="US1020_Verify Scroll Up using 'Arrow' button and Scroll Down functionality" name="Verify Scroll Up using 'Arrow' button and Scroll Down functionality" time="10.287">
+        <failure message="invalid selector: Unable to locate an element with the xpath expression (//h2[text()='Full-Fledged practice website for Automation Engineers'])[1] or (//h2[text()='Full-Fledged practice website for Automation Engineers'])[2] or (//h2[text()='Full-Fledged practice website for Automation Engineers'])[3] because of the following error:&#10;TypeError: Failed to execute 'evaluate' on 'Document': The result is not a node set, and therefore cannot be converted to the desired type.&#10;  (Session info: chrome=102.0.5005.115)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#invalid_selector_exception&#10;Build info: version: '4.1.3', revision: '7b1ebf28ef'&#10;System info: host: 'LAPTOP-MN0HD9MC', ip: '192.168.1.34', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [e737fa7c000f84eb073afd0e3bacd206, findElement {using=xpath, value=(//h2[text()='Full-Fledged practice website for Automation Engineers'])[1] or (//h2[text()='Full-Fledged practice website for Automation Engineers'])[2] or (//h2[text()='Full-Fledged practice website for Automation Engineers'])[3]}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.115, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: C:\Users\asus\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:62529}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62529/devtoo..., se:cdpVersion: 102.0.5005.115, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: e737fa7c000f84eb073afd0e3bacd206" type="org.openqa.selenium.InvalidSelectorException">
             <![CDATA[Given Launch browser........................................................passed
 And Navigate to url 'mainPage'..............................................passed
 And Verify that home page is visible successfully...........................passed
-And Click on Signup  Login button...........................................passed
-And Enter name and email address............................................passed
-And Click Signup button.....................................................passed
-And Verify that ENTER ACCOUNT INFORMATION is visible........................passed
-And Fill details: Title, Name, Email, Password, Date of birth...............passed
-And Select checkbox Sign up for our newsletter!.............................passed
-And Select checkbox Receive special offers from our partners!Fill details: First name, Last name, Company, Address,.passed
-And Click Create Account button.............................................passed
-And Verify that ACCOUNT CREATED! is visible.................................passed
-And Click Continue button...................................................passed
-And Verify that Logged in as username is visible............................passed
-And Add products to cart....................................................passed
-And Click View Cart button..................................................passed
-And Verify that cart page is displayed......................................passed
-And Click Proceed To Checkout...............................................passed
-And Verify that the delivery address is same address filled at the time registration of account.passed
-And Verify that the billing address is same address filled at the time registration of account.failed
-And Click Delete Account button.............................................skipped
+And Scroll down page to bottom..............................................passed
+And Verify text SUBSCRIPTION................................................passed
+And Click on arrow at bottom right side to move upward......................passed
+And Verify that page is scrolled up and Full-Fledged practice website for Automation Engineers text is visible on screen.failed
 
 StackTrace:
-java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:87)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at org.junit.Assert.assertTrue(Assert.java:53)
-	at stepDefinitions.MyStepdefs.verifyThatTheBillingAddressIsSameAddressFilledAtTheTimeRegistrationOfAccount(MyStepdefs.java:799)
-	at ✽.Verify that the billing address is same address filled at the time registration of account(file:///C:/Users/asus/IdeaProjects/com.Automationexercise_Cucumber/src/test/resources/features/US1018_Verify%20address%20details%20in%20checkout%20page.feature:25)
+org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression (//h2[text()='Full-Fledged practice website for Automation Engineers'])[1] or (//h2[text()='Full-Fledged practice website for Automation Engineers'])[2] or (//h2[text()='Full-Fledged practice website for Automation Engineers'])[3] because of the following error:
+TypeError: Failed to execute 'evaluate' on 'Document': The result is not a node set, and therefore cannot be converted to the desired type.
+  (Session info: chrome=102.0.5005.115)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#invalid_selector_exception
+Build info: version: '4.1.3', revision: '7b1ebf28ef'
+System info: host: 'LAPTOP-MN0HD9MC', ip: '192.168.1.34', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e737fa7c000f84eb073afd0e3bacd206, findElement {using=xpath, value=(//h2[text()='Full-Fledged practice website for Automation Engineers'])[1] or (//h2[text()='Full-Fledged practice website for Automation Engineers'])[2] or (//h2[text()='Full-Fledged practice website for Automation Engineers'])[3]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 102.0.5005.115, chrome: {chromedriverVersion: 102.0.5005.61 (0e59bcc00cc4..., userDataDir: C:\Users\asus\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:62529}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:62529/devtoo..., se:cdpVersion: 102.0.5005.115, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e737fa7c000f84eb073afd0e3bacd206
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy22.isDisplayed(Unknown Source)
+	at stepDefinitions.MyStepdefs.verifyThatPageIsScrolledUpAndFullFledgedPracticeWebsiteForAutomationEngineersTextIsVisibleOnScreen(MyStepdefs.java:836)
+	at ✽.Verify that page is scrolled up and Full-Fledged practice website for Automation Engineers text is visible on screen(file:///C:/Users/asus/IdeaProjects/com.Automationexercise_Cucumber/src/test/resources/features/US1020_Verify%20Scroll%20Up%20using%20Arrow%20button%20and%20Scroll%20Down%20functionality.feature:12)
 ]]>
         </failure>
     </testcase>

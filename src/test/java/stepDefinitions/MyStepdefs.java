@@ -816,5 +816,38 @@ public class MyStepdefs {
     public void clickContinueButtonAfterDownloadInvoice() {
         cartPage.continueAfterInvoice.click();
     }
+
+    @And("Scroll down page to bottom")
+    public void scrollDownPageToBottom() {
+
+        js.executeScript("window.scrollBy(0,750)");
+
+
+    }
+
+    @And("Click on arrow at bottom right side to move upward")
+    public void clickOnArrowAtBottomRightSideToMoveUpward() {
+
+        mainPage.arrowForTop.click();
+    }
+
+    @And("Verify that page is scrolled up and Full-Fledged practice website for Automation Engineers text is visible on screen")
+    public void verifyThatPageIsScrolledUpAndFullFledgedPracticeWebsiteForAutomationEngineersTextIsVisibleOnScreen() {
+     if(mainPage.fullFledgedPracticeLabel.isEnabled()){
+         Assert.assertTrue(mainPage.fullFledgedPracticeLabel.isDisplayed());}
+
+     else if(mainPage.fullFledgedPracticeLabel2.isEnabled()){
+            Assert.assertTrue(mainPage.fullFledgedPracticeLabel2.isDisplayed());}
+
+        else if(mainPage.fullFledgedPracticeLabel3.isEnabled()){
+            Assert.assertTrue(mainPage.fullFledgedPracticeLabel3.isDisplayed());};
+
+    }
+
+    @And("Scroll up page to top")
+    public void scrollUpPageToTop() {
+
+        js.executeScript("window.scrollBy(0,-750)");
+    }
 }
 

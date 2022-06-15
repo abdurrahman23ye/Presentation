@@ -81,4 +81,18 @@ public class MainPage {
     @FindBy(xpath = "(//a[@data-product-id=4])[3]")
     public WebElement addRecommendedItem2;
 
+    @FindBy(xpath
+            = "(//h2[text()='Full-Fledged practice website for Automation Engineers'])[1]" )
+    public WebElement fullFledgedPracticeLabel;
+    @FindBy(xpath
+            = "(//h2[text()='Full-Fledged practice website for Automation Engineers'])[2]" )
+    public WebElement fullFledgedPracticeLabel2;
+    @FindBy(xpath
+            = "(//h2[text()='Full-Fledged practice website for Automation Engineers'])[2]" )
+    public WebElement fullFledgedPracticeLabel3;
+
+    @FindBy(xpath = "//i[@class='fa fa-angle-up']")
+
+    public WebElement arrowForTop;
+
 }
