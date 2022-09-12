@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="0.039">
+    <testcase classname="Belirlenmis testi cok sayida sitede calistirma" name="_2" time="0.01">
+        <failure message="src\test\resources\defens.xlsx (Sistem belirtilen dosyayı bulamıyor)" type="java.io.FileNotFoundException">
+            <![CDATA[Given Kullanici Defensx browsera yukler.....................................passed
+Then Kullanici test edilecek sayfalari acar.................................failed
+And Kullanici browseri kapatir..............................................skipped
+
+StackTrace:
+java.io.FileNotFoundException: src\test\resources\defens.xlsx (Sistem belirtilen dosyayı bulamıyor)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:112)
+	at stepDefinitions.MyStepdefinitions.kullaniciTestEdilecekSayfalariAcar(MyStepdefinitions.java:68)
+	at ✽.Kullanici test edilecek sayfalari acar(file:///C:/Users/asus/IdeaProjects/Presentation/src/test/resources/features/TC03_Test%20edilecek%20siteleri%20belli%20bir%20kaynaktan%20alma.feature:8)
+]]>
+        </failure>
+    </testcase>
+</testsuite>
