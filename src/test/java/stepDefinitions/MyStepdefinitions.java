@@ -63,19 +63,19 @@ public class MyStepdefinitions {
     public void kullaniciTestEdilecekSayfalariAcar() throws IOException {
 
 
-        String path="C:\\Users\\asus\\IdeaProjects\\Presentation\\src\\test\\java\\defensx.xlsx";
+        String path="C:\\Users\\asus\\IdeaProjects\\Presentation\\src\\test\\resources\\defensx.xlsx";
 
         FileInputStream fis= new FileInputStream(path);
 
         Workbook workbook= WorkbookFactory.create(fis);
 
-        String urls= workbook.getSheet("Sayfa2").getRow(1).getCell(urls2).toString();
+        String urls= workbook.getSheet("Sayfa2").getRow(0).getCell(urls2).toString();
 
         System.out.println("urls = " + urls);
 
         Driver.getDriver().get(ConfigReader.getProperty(urls));
 
-        urls2++;
+       // urls2++;
 
 
     }
